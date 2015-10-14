@@ -1,0 +1,72 @@
+{
+    "result": "true",
+    "isLogin": "false",
+    "price": "175.00",
+    "count": "2",
+    "isfin":"false",
+    "productList": [
+        {
+            "productName": "惠普HP 703 号黑色墨盒",
+            "productId": "6",
+            "imgUrl": "/weixinstore/Admin/Upload/Pictures/e7/e746783f-b545-4ffb-9b52-259e601084c2/c02140856_140x140.png",
+            "productPrice": "51.00",
+            "productNum": "0",
+            "loginUrl": "login.aspx",
+            "productUrl": "product.aspx?id=6"
+        },
+        {
+            "productName": "惠普HP 678 号黑色墨盒",
+            "productId": "7",
+            "imgUrl": "/weixinstore/Admin/Upload/Pictures/7c/7cfb17d4-afe3-4de8-97c7-d92886ad177b/c03269450_140x140.png",
+            "productPrice": "62.00",
+            "productNum": "0",
+            "loginUrl": "login.aspx",
+            "productUrl": "product.aspx?id=7"
+        },
+        {
+            "productName": "惠普HP 685 号黑色墨盒",
+            "productId": "5",
+            "imgUrl": "/weixinstore/Admin/Upload/Pictures/d4/d416cdda-6dbf-46ea-8b15-97247f835e06/c03269436_140x140.png",
+            "productPrice": "62.00",
+            "productNum": "10",
+            "loginUrl": "login.aspx",
+            "productUrl": "product.aspx?id=5"
+        },
+        {
+            "productName": "惠普HP 678 号黑色墨盒",
+            "productId": "7",
+            "imgUrl": "/weixinstore/Admin/Upload/Pictures/7c/7cfb17d4-afe3-4de8-97c7-d92886ad177b/c03269450_140x140.png",
+            "productPrice": "62.00",
+            "productNum": "0",
+            "loginUrl": "login.aspx",
+            "productUrl": "product.aspx?id=7"
+        },
+        {
+            "productName": "惠普HP 685 号黑色墨盒",
+            "productId": "5",
+            "imgUrl": "/weixinstore/Admin/Upload/Pictures/d4/d416cdda-6dbf-46ea-8b15-97247f835e06/c03269436_140x140.png",
+            "productPrice": "62.00",
+            "productNum": "10",
+            "loginUrl": "login.aspx",
+            "productUrl": "product.aspx?id=5"
+        },
+        {
+            "productName": "惠普HP 678 号黑色墨盒",
+            "productId": "7",
+            "imgUrl": "/weixinstore/Admin/Upload/Pictures/7c/7cfb17d4-afe3-4de8-97c7-d92886ad177b/c03269450_140x140.png",
+            "productPrice": "62.00",
+            "productNum": "0",
+            "loginUrl": "login.aspx",
+            "productUrl": "product.aspx?id=7"
+        },
+        {
+            "productName": "惠普HP 685 号黑色墨盒",
+            "productId": "5",
+            "imgUrl": "/weixinstore/Admin/Upload/Pictures/d4/d416cdda-6dbf-46ea-8b15-97247f835e06/c03269436_140x140.png",
+            "productPrice": "62.00",
+            "productNum": "10",
+            "loginUrl": "login.aspx",
+            "productUrl": "product.aspx?id=5"
+        }
+    ]
+}

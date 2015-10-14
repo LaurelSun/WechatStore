@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+	<title> 订单提交成功 </title>
+	<meta name="description" content="">
+	<!-- 公用meta & css -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<meta content="telephone=no" name="format-detection" />
+	<meta charset="utf-8">
+	<!-- 公用css -->
+	<link rel="stylesheet" href="/weixinstore/css/bootstrap.min.css">
+	<link rel="stylesheet" href="/weixinstore/css/main.css?2.0">
+	<!-- 本页css -->
+	<link rel="stylesheet" href="/weixinstore/css/p-scroll.css">
+	<link rel="stylesheet" href="/weixinstore/css/style-ly.css">
+	<style>
+		html {
+			-ms-touch-action: none;
+		}
+	</style>
+	<script>
+		//document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false); 
+	</script>
+</head>
+<body>
+	<div class="ConfirmOrder-main">
+		<div class="box">
+			<p class="success-1">订单提交成功</p>
+			<button type="button" class="btn btn-default btn-type-02">继续购物</button>
+		</div>
+	</div>
+	
+	
+	<!-- 公用js -->
+	<script src="/weixinstore/js/vendor/jquery-2.1.1.min.js"></script>
+	<script src="/weixinstore/js/vendor/bootstrap.min.js"></script>
+	<!-- 本页js -->
+	
+	
+
+	<script>
+		$(function(){
+			$('.btn-type-02').click(function() {
+				window.location.href = 'index.shtml';
+			});
+		})
+	</script>
+</body>
+</html>

@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+	<title> 惠普微商城 </title>
+	<meta name="description" content="">
+	<!-- 公用meta & css -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<meta content="telephone=no" name="format-detection" />
+	<meta charset="utf-8">
+	<!-- 公用css -->
+	<link rel="stylesheet" href="/weixinstore/css/bootstrap.min.css">
+	<link rel="stylesheet" href="/weixinstore/css/main.css?2.0">
+	<!-- <link type="text/css" rel="stylesheet" href="/weixinstore/css/jquery.mmenu.all.css" /> -->
+	<link rel="stylesheet" href="/weixinstore/css/i-scroll.css">
+	<link rel="stylesheet" href="/weixinstore/css/style-ly.css">
+	<style>
+		html {
+			-ms-touch-action: none;
+		}
+	</style>
+	<script>
+		document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
+	</script>
+</head>
+<body style="overflow:hidden;">
+	<div class="index-header">
+		<div class="search-bar" style="padding-left:0;">
+			<ul>
+				<li><input placeholder="输入产品或者硒鼓墨盒型号" class="searchTxt"></li>
+			</ul>
+		</div>
+	</div>
+	<div class="defaultPage">
+		<div id="scroller">
+			<div class="topbanner">
+				<div class="scroll_box" id="scroll_img">
+					<ul class="scroll_wrap">
+						<li><img src="/weixinstore/img/top-banner.jpg" width="100%" alt=""></li>
+						<li><img src="/weixinstore/img/top-banner.jpg" width="100%" alt=""></li>
+						<li><img src="/weixinstore/img/top-banner.jpg" width="100%" alt=""></li>
+						<li><img src="/weixinstore/img/top-banner.jpg" width="100%" alt=""></li>
+					</ul>
+				</div>
+				<ul class="scroll_position" id='scroll_position'>
+					<li class="on"><a href="javascript:void(0);">1</a></li>
+					<li><a href="javascript:void(0);">2</a></li>
+					<li><a href="javascript:void(0);">3</a></li>
+					<li><a href="javascript:void(0);">3</a></li>
+				</ul>
+				
+			</div>
+			<div class="itemList">
+				<ul>
+					<li><a href="#"><img src="/weixinstore/img/item1.jpg" alt=""></a></li>
+					<li><a href="#"><img src="/weixinstore/img/item2.jpg" alt=""></a></li>
+					<li><a href="#"><img src="/weixinstore/img/item3.jpg" alt=""></a></li>
+					<li><a href="#"><img src="/weixinstore/img/item4.jpg" alt=""></a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+		
+	<!-- </div> -->
+	<div class="index-footer">
+		<div class="navbar">
+			<ul>
+				<li class="active"><a href="index.shtml"><span>首页</span></a></li>
+				<li><a href="index.shtml"><span>全部产品</span></a></li>
+				<li><a href="ShoppingCart.shtml"><span>购物车<b class="proNumber-1">1</b></span></a></li>
+				<li><a href="PersonalCenter.shtml"><span>会员中心</span></a></li>
+			</ul>
+		</div>
+	</div>
+	<!-- 公用js -->
+	<script src="/weixinstore/js/vendor/jquery-2.1.1.min.js"></script>
+	<script src="/weixinstore/js/vendor/bootstrap.min.js"></script>
+
+	<!-- 本页js -->
+	<script src="/weixinstore/js/vendor/iscroll5.js"></script>
+	<script src="/weixinstore/js/plugins.js"></script>
+	<script src='/weixinstore/js/vendor/hhSwipe.js'></script>
+	
+	<script>
+		var _page = 'index';
+		//图片滚动
+		var slider = Swipe(document.getElementById('scroll_img'), {
+			auto: 10000,
+			continuous: true,
+			callback: function(pos) {
+				if (ly_num == 2){
+					var i = bullets.length;
+					while (i--) {
+						bullets[i].className = ' ';
+					}
+					x=pos%2;
+					bullets[x].className = 'on';
+				}else{
+					var i = bullets.length;
+					while (i--) {
+						bullets[i].className = ' ';
+					}
+					bullets[pos].className = 'on';
+				}
+				
+			}
+		});
+		var bullets = document.getElementById('scroll_position').getElementsByTagName('li');
+		
+		$(function(){
+			myScroll = new IScroll('.defaultPage', { mouseWheel: true, preventDefault: false, checkDOMChanges: true });
+		})
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+	<title> 订单详情 </title>
+	<meta name="description" content="">
+	<!-- 公用meta & css -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<meta content="telephone=no" name="format-detection" />
+	<meta charset="utf-8">
+	<!-- 公用css -->
+	<link rel="stylesheet" href="/weixinstore/css/bootstrap.min.css">
+	<link rel="stylesheet" href="/weixinstore/css/main.css?2.0">
+	<!-- 本页css -->
+	<link rel="stylesheet" href="/weixinstore/css/p-scroll.css">
+	<link rel="stylesheet" href="/weixinstore/css/style-ly.css">
+	<style>
+		html {
+			-ms-touch-action: none;
+		}
+	</style>
+	<script>
+		//document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false); 
+	</script>
+</head>
+<body>
+	<div class="OrderFormInfo-main">
+		<div class="box">
+			<table class="order-table-1">
+				<tr>
+					<th>订单状态：</th>
+					<td><span class="tpye-1">已完成</span></td>
+				</tr>
+				<tr>
+					<th>订单号：</th>
+					<td>456456456</td>
+				</tr>
+				<tr>
+					<th>下单时间：</th>
+					<td>2014-01-01  15:00</td>
+				</tr>
+			</table>
+		</div>
+		<div class="box2">
+			订单金额：<span class="money">￥461.00</span>
+		</div>
+		<div class="OrderFormInfo-list">
+			<ul>
+				<li>
+					<div class="proImg">
+						<img src="/weixinstore/img/products/pro-list.jpg" alt="">
+					</div>
+					<div class="proInfo">
+						<h3>惠普HP 12A 黑色激光打印硒鼓</h3>
+					</div>
+					<span class="proNum">数量1</span>
+				</li>
+				<li>
+					<div class="proImg">
+						<img src="/weixinstore/img/products/pro-list.jpg" alt="">
+					</div>
+					<div class="proInfo">
+						<h3>惠普HP 12A 黑色激光打印硒鼓</h3>
+					</div>
+					<span class="proNum">数量1</span>
+				</li>
+				<li>
+					<div class="proImg">
+						<img src="/weixinstore/img/products/pro-list.jpg" alt="">
+					</div>
+					<div class="proInfo">
+						<h3>惠普HP 12A 黑色激光打印硒鼓</h3>
+					</div>
+					<span class="proNum">数量1</span>
+				</li>
+				<li>
+					<div class="proImg">
+						<img src="/weixinstore/img/products/pro-list.jpg" alt="">
+					</div>
+					<div class="proInfo">
+						<h3>惠普HP 12A 黑色激光打印硒鼓</h3>
+					</div>
+					<span class="proNum">数量1</span>
+				</li>
+			</ul>
+		</div>
+		<div class="consigneeInfo">
+			<table class="order-table-1">
+				<tr>
+					<th>姓名：</th>
+					<td>张三</td>
+				</tr>
+				<tr>
+					<th>电话：</th>
+					<td>66666666</td>
+				</tr>
+				<tr>
+					<th valign="top">地址：</th>
+					<td>北京市朝阳区北京市朝阳区北京市朝阳区北京市朝阳区</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+	
+	
+	<!-- 公用js -->
+	<script src="/weixinstore/js/vendor/jquery-2.1.1.min.js"></script>
+	<script src="/weixinstore/js/vendor/bootstrap.min.js"></script>
+
+	<!-- 本页js -->
+	
+	
+
+	<script>
+		$(function(){
+			$('.OrderFormInfo-list li').eq($('.OrderFormInfo-list li').length - 1).addClass('last')
+		})
+	</script>
+</body>
+</html>

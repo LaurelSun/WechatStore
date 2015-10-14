@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+	<title> 购物车 </title>
+	<meta name="description" content="">
+	<!-- 公用meta & css -->
+	<!--#include virtual="/weixinstore/inc/meta.inc"-->
+	<link rel="stylesheet" href="/weixinstore/css/style-ly.css">
+	
+	<style>
+		html {
+			-ms-touch-action: none;
+		}
+	</style>
+	<script>
+		document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
+	</script>
+</head>
+<body>
+	<div class="ShoppingCart-wrapper" id="ShoppingCart-wrapper">
+		<div id="scroller">
+			<img src="/weixinstore/img/event75th-top.jpg" width="100%" alt="">
+			<table width="100%">
+				<tr>
+					<td width="50%"><a href="http://www.baidu.com"><img src="/weixinstore/img/event75th-01.jpg" width="100%" alt=""></a></td>
+					<td width="50%"><a href="http://www.baidu.com"><img src="/weixinstore/img/event75th-02.jpg" width="100%" alt=""></a></td>
+				</tr>
+				<tr>
+					<td width="50%"><a href="http://www.baidu.com"><img src="/weixinstore/img/event75th-03.jpg" width="100%" alt=""></a></td>
+					<td width="50%"><a href="http://www.baidu.com"><img src="/weixinstore/img/event75th-04.jpg" width="100%" alt=""></a></td>
+				</tr>
+			</table>
+			<img src="/weixinstore/img/event75th-footer.jpg" width="100%" alt="">
+		</div>
+	</div>
+	<div class="index-footer">
+		<!--#include virtual="/weixinstore/inc/nav.inc"-->
+	</div>
+
+
+	<!-- 公用js -->
+	<!--#include virtual="/weixinstore/inc/javascript.inc"-->
+	<!-- 本页js -->
+	<script src="/weixinstore/js/vendor/iscroll5.js"></script>
+	<script src="/weixinstore/js/plugins.js"></script>
+	<script>
+		$(function() {
+			myScroll = new IScroll('.ShoppingCart-wrapper', { mouseWheel: true, preventDefault: false, checkDOMChanges: true });
+		});
+	</script>
+</body>
+</html>
