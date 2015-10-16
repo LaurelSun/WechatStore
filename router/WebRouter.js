@@ -3,10 +3,20 @@
  */
 var express=require('express');
 var router=express.Router();
+var auth=require('../common/middlewares/validateAuth');
+
+var adminCategory=require('./adminCategoryRouter');
 
 router.get('/',function(req,res,next){
     res.render('index');
 });
+
+//router.use('/admin',auth.adminRequire);
+
+router.use('/admin/category',adminCategory)
+
+
+
 
 
 
