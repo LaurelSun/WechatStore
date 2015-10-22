@@ -41,14 +41,18 @@ mongooseHelper.prototype.bindModel=function(){
 mongooseHelper.prototype.Query=function(query,opt,callback){
 
     var option={};
+    if(typeof(opt)==="function"){
+        callback=opt;
+        opt={};
+    }
     option.pageSize=opt.pageSize;
     option.sortField=opt.sortField||{_id:1};
 
     query=query||{};
-
+    var $this=this;
     if(option.pageSize){
         //分页query会传出  totalPage totalCnt
-        var $this=this;
+
         this.model.find(query).count().exec(function(err,data){
             if(err){
                 callback(err,{});
@@ -57,8 +61,7 @@ mongooseHelper.prototype.Query=function(query,opt,callback){
 
             var totalCnt=data;
             var totalPage=Math.ceil(parseFloat(totalCnt/parseInt(conf.page_cnt)));
-            console.log(JSON.stringify(query))
-            console.log(option.sortField)
+
             $this.model.find(query).sort(option.sortField).limit(option.pageSize).exec(function(err,data){
                 if(err){
                     callback(err,{});
@@ -70,7 +73,10 @@ mongooseHelper.prototype.Query=function(query,opt,callback){
         });
     }
     else{
-        this.model.find(query).sort(option.sortField).exec(callback);
+
+        $this.model.find(query).sort(option.sortField).exec(function(err,data){
+            callback(err,data);
+        });
     }
 
 };
@@ -97,11 +103,13 @@ mongooseHelper.prototype.save=function(obj,callback){
     var jsonObj=eval('('+jsonStr+')');
 
     this.model.create(jsonObj,function(err,d){
-
         callback(err,d);
     });
 };
 
+mongooseHelper.prototype.count=function(query,callback){
+    this.model.find(query).count().exec(callback);
+}
 
 
 module.exports=mongooseHelper;

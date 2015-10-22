@@ -13,7 +13,7 @@ function CategoryCtl(){}
 CategoryCtl.prototype={
     createCategory:function(req,res,next){
 
-        var categoryName=req.query.categoryName;
+        var categoryName=req.Category.name;
           CategoryService.model.exist(categoryName,function(err,data){
               if(err)next(err);
               if(data<=0){
@@ -70,11 +70,8 @@ CategoryCtl.prototype={
                     res.result(true,"success",data);
             })
         })
-    }
-
-
+    },
+    constructor:CategoryCtl
 };
 
 module.exports=CategoryCtl;
-
-

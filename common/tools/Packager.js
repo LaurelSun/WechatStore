@@ -1,10 +1,11 @@
 /**
  * Created by Laurel Sun on 16/10/2015.
  */
-var util=require('util');
 module.exports=Packager;
 
-function Packager(packageName,packageType){
+
+
+function Packager(packageType){
 
     return function(req,res,next){
         var data=req.method.toUpperCase()=="POST"?req.body:req.query;
@@ -13,36 +14,40 @@ function Packager(packageName,packageType){
             next();
             return;
         }
-        var packageObj=new packageType();
-        var info='';
+        var packageObj=new packageType(); //req 绑定对象
+        var packageName=packageObj.__proto__.constructor.name;
+
+
+        //请求过来后 首先获取每一个字段的值 new绑定的对象
+        //遍历字段判定 对象是否有该字段
+        //如果存在该字段 尝试进行json转换 转换成功 将object复制给该对象
+        //转换失败 字符串给该对象
+
 
         for(var i in data){
+            if(packageObj.hasOwnProperty(i)&&typeof (packageObj[i])!="function"){
+                try{
+                    packageObj[i] = JSON.parse(data[i])
+                }catch(e){
+                    packageObj[i]=data[i];
+                }
+            }
 
-            /*
-            * 5
-            * true
-            * "abc"
-            * {"abc":"123"}
-            * {"abc"：{"key":"value","key2":"value2"}}
-            * [1,2,3,4]
-            * [{"key":"value"},{"key":"value"}]
-            *
-            * */
-            console.log('key:'+i+' value:'+data[i]);
-
-            console.log(typeof(data[i]));
-
-           var str= util.format("key:%s value: %s type:%s",i,data[i],typeof(data[i]))
-            console.log(str);
-
-            info+=str+'<br>';
-
-
-           // if(packageObj[i]===undefined)
         }
 
-        res.send(info);
 
+
+        for(var attr in packageObj){
+            if(packageObj[attr]===undefined){
+                packageObj[attr]=''
+            }
+        }
+
+
+
+        req[packageName]=packageObj;
+
+        next();
     }
 
 }

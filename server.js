@@ -22,7 +22,7 @@ app.use(express.static(__dirname+'/static'));
 app.use(session({
     secret:conf.session_secret,
     resave:true,
-    cookie:{secure:true},
+    cookie:{secure:false},
     saveUninitialized:false
 }));
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -34,7 +34,7 @@ app.use('/',router);
 //错误处理器
 if(conf.debug){
     app.use(function(err,req,res,next){
-        console.log(err)
+        console.log(err);
         res.send(err);
     });
 }
@@ -42,10 +42,9 @@ else{
     app.use(function(err,req,res,next){
         res.statusCode(500);
         res.send('server error');
-    })
+    });
 }
 
 
 //监听端口
-
 app.listen(conf.port);

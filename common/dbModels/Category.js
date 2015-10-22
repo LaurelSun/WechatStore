@@ -3,15 +3,18 @@
  */
 var mongoHelper=require('./mongoose');
 
-function Category(name,enable,createDate){
+function Category(name,enable,createDate,parentId){
+    this.id='';
     this.name=name;
     this.enable=enable;
     this.createDate=createDate;
+    this.parentId=parentId;
 
     this.schema= {
         name: {type: String, required: true},
         enable: {type: Boolean},
-        createDate:{type:Date}
+        createDate:{type:Date},
+        parentId:{type:String}
     }
 }
 var CategoryHelper=new mongoHelper("category",Category);

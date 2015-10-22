@@ -4,6 +4,7 @@
 var mongoHelper=require('./mongoose');
 
 function User(name,password,status,createDate,isAdmin){
+    this.id='';
     this.name=name;
     this.password=password;
     this.status=status;
@@ -24,3 +25,16 @@ var UserHelper=new mongoHelper("User",User);
 UserHelper.bindStatic('changeStatus',function(id,status){
     UserHelper.model.update({_id:id})
 });
+
+UserHelper.bindStatic('findUserByName',function(name,pwd,callback){
+
+    UserHelper.Query({name:name,password:pwd},function(err,data) {
+        callback(err,data);
+    });
+});
+
+
+
+UserHelper.bindModel();
+module.exports=User;
+module.exports.UserService=UserHelper;

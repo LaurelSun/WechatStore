@@ -1,0 +1,34 @@
+
+.login{
+   background-color:  #eee;
+    padding:40px;
+}
+.login .form{
+    width:300px;
+}
+.login h2{
+    color:#428bca;
+}
+.login .form input{
+    margin-bottom: 5px;
+}
+
+.login .col-xs-6{
+    padding-left: 0px;
+}
+
+.product   .category{
+    width:100%;
+}
+.product  .category{
+    width:100%;
+    text-align: left;
+}
+
+.product .tab-page
+{
+    border:1px solid #ddd;
+    border-top: none;
+    padding:15px ;
+    margin-bottom: 20px;
+}
