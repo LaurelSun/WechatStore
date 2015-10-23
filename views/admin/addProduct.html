@@ -3,15 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <title></title>
-    <link rel="stylesheet" href="/css/bootstrap.css"/>
+    <!--<link rel="stylesheet" href="/css/bootstrap.css"/>-->
+
+
+
+
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/bootstrap-datetimepicker.min.css">
+    <link rel="stylesheet" href="/css/umeditor.min.css">
     <link rel="stylesheet" href="/css/admin.css"/>
+
     <script src="/js/vendor/jquery-2.1.1.min.js"></script>
     <script  src="/js/vendor/bootstrap.js"></script>
     <script src="/js/bootstrap-datetimepicker.js"></script>
+    <script src="/js/vendor/umeditor.config.js"></script>
+    <script src="/js/vendor/umeditor.js"></script>
+
+
+
     <script>
         $(function(){
+            var um = UM.getEditor('myEditor');
+            $(".form_datetime").datetimepicker({format: 'yyyy-mm-dd hh:00',autoclose:1,minView:1});
 
-            $(".form_datetime").datetimepicker({format: 'yyyy-mm-dd hh:ii'});
+            $('.nav-tabs').on('click','li',function(){
+                var $this=$(this);
+
+               var tabIndex=$this.index();
+
+                $('li',  $('.nav-tabs')).removeClass('active').eq(tabIndex).addClass('active');
+
+                $('.tab-page').addClass('hidden').eq(tabIndex).removeClass('hidden')
+            });
         })
     </script>
 </head>
@@ -57,15 +80,16 @@
             </div>
 
             <div class="form-group">
-                <label class="control-label col-sm-2"> ProductCategory:</label>
+                <label class="control-label col-sm-2"> ProductPutInDate:</label>
                 <div class="col-sm-5">
-                    <div class="col-sm-4">
-                        <input size="16" type="text" value=" " readonly class="form_datetime">
-
-
+                    <div class="col-sm-4 input-group date form_time " data-date="" data-date-format="hh:ii" data-link-field="dtp_input3" data-link-format="hh:ii">
+                        <input size="16" type="text" value=" "   class="form-control form_datetime">
                     </div>
-                    <label class="control-label col-sm-4"> ProductCategory:</label>
-                    <div class="col-sm-4"></div>
+                    <label class="control-label col-sm-4"> ProductPutOutDate:</label>
+
+                    <div class="col-sm-4 input-group date form_time " data-date="" data-date-format="hh:ii" data-link-field="dtp_input3" data-link-format="hh:ii">
+                        <input size="16" type="text" value=" "   class="form-control form_datetime">
+                    </div>
 
 
                 </div>
@@ -75,16 +99,89 @@
 
             </div>
 
-            <ul class="nav nav-tabs ">
+            <ul class="nav nav-tabs">
                 <li role="presentation" class="active"><a href="#">Product Image</a></li>
-                <li role="presentation"><a href="#">Inventory</a></li>
-                <li role="presentation"><a href="#">Product Intro</a></li>
+                <li role="presentation" ><a href="#">Inventory</a></li>
+                <li role="presentation" ><a href="#">Product Intro</a></li>
             </ul>
 
-            <div class="tab-page">
-                aaa
+            <div class="tab-page  ">
+                <div class="row">
+                    <a href="#" class="thumbnail col-md-1">
+                        <img src="/css/img/upload2.png"  >
+                    </a>
+
+                    <a href="#" class="thumbnail col-md-1">
+                        <img src="/css/img/upload2.png"  >
+                    </a>
+
+                    <a href="#" class="thumbnail col-md-1">
+                        <img src="/css/img/upload2.png"  >
+                    </a>
+
+                    <a href="#" class="thumbnail col-md-1">
+                        <img src="/css/img/upload2.png"  >
+                    </a>
+
+                    <a href="#" class="thumbnail col-md-1">
+                        <img src="/css/img/upload2.png"  >
+                    </a>
+
+
+
+                </div>
             </div>
 
+
+            <div class="tab-page hidden">
+
+                <div class="form-group">
+                    <label class="control-label col-sm-2"> InventoryStatus:</label>
+                    <div class="col-sm-5">
+                        <div class="dropdown">
+                            <button class="btn btn-default dropdown-toggle category" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                Enable
+                                <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu category" aria-labelledby="dropdownMenu1">
+                                <li ><a href="#">Enable</a>  </li>
+                                <li><a href="#">Disenable</a>   </li>
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="form-group">
+                    <label class="control-label col-sm-2"> InventoryInitialCount:</label>
+                    <div class="col-sm-5">
+                        <input type="text" class="form-control" placeholder="InventoryInitialCount">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label col-sm-2"> InventoryCount:</label>
+                    <div class="col-sm-5">
+                        <input type="text" class="form-control" placeholder="InventoryCount">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label col-sm-2"> WarnCount:</label>
+                    <div class="col-sm-5">
+                        <input type="text" class="form-control" placeholder="WarnCount">
+                    </div>
+                </div>
+
+
+            </div>
+
+
+            <div class="tab-page hidden">
+                <script type="text/plain" id="myEditor"   ></script>
+
+            </div>
 
             <div class="form-group">
                 <div class="col-sm-2"></div>

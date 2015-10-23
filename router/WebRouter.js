@@ -8,7 +8,7 @@ var auth=require('../common/middlewares/validateAuth');
 var Packager=require('../common/tools/Packager');
 var adminCategory=require('./adminCategoryRouter');
 var adminProduct=require('./adminProductRouter');
-
+var uploadRouter=require('./uploadRouter');
 var User=require('../common/dbModels/User');
 
 router.get('/',function(req,res,next){
@@ -27,5 +27,7 @@ router.get('/admin/index',function(req,res,next){
 router.use('/admin/category',adminCategory);
 
 router.use('/admin/product',adminProduct);
+
+router.use('/admin/upload',uploadRouter)
 
 module.exports=router;
