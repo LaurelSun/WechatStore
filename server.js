@@ -17,7 +17,7 @@ app.set('views',__dirname+'/views');
 
 //设置静态文件目录
 app.use(express.static(__dirname+'/static'));
-
+app.use('/upload/',express.static(conf.upload_path));
 //绑定中间件
 app.use(session({
     secret:conf.session_secret,

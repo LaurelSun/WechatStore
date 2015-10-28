@@ -18,23 +18,16 @@
     <script src="/js/bootstrap-datetimepicker.js"></script>
     <script src="/js/vendor/umeditor.config.js"></script>
     <script src="/js/vendor/umeditor.js"></script>
+    <script src="/js/vendor/ajaxfileupload.js"></script>
+    <script src="/js/admin/product.js"></script>
 
 
 
     <script>
         $(function(){
-            var um = UM.getEditor('myEditor');
-            $(".form_datetime").datetimepicker({format: 'yyyy-mm-dd hh:00',autoclose:1,minView:1});
+            var ins=new product();
+            ins.init();
 
-            $('.nav-tabs').on('click','li',function(){
-                var $this=$(this);
-
-               var tabIndex=$this.index();
-
-                $('li',  $('.nav-tabs')).removeClass('active').eq(tabIndex).addClass('active');
-
-                $('.tab-page').addClass('hidden').eq(tabIndex).removeClass('hidden')
-            });
         })
     </script>
 </head>
@@ -105,29 +98,13 @@
                 <li role="presentation" ><a href="#">Product Intro</a></li>
             </ul>
 
-            <div class="tab-page  ">
+            <div class="tab-page">
                 <div class="row">
                     <a href="#" class="thumbnail col-md-1">
                         <img src="/css/img/upload2.png"  >
+                        <input type="file" id="product" name="product"  >
+
                     </a>
-
-                    <a href="#" class="thumbnail col-md-1">
-                        <img src="/css/img/upload2.png"  >
-                    </a>
-
-                    <a href="#" class="thumbnail col-md-1">
-                        <img src="/css/img/upload2.png"  >
-                    </a>
-
-                    <a href="#" class="thumbnail col-md-1">
-                        <img src="/css/img/upload2.png"  >
-                    </a>
-
-                    <a href="#" class="thumbnail col-md-1">
-                        <img src="/css/img/upload2.png"  >
-                    </a>
-
-
 
                 </div>
             </div>

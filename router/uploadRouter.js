@@ -4,10 +4,10 @@
 var express=require('express');
 var conf=require('../conf');
 var multer=require('multer');
-var mime=require('mime');
 var fs=require('fs');
 var path=require('path');
 var gm=require('gm').subClass({ imageMagick: true });
+
 
 var router=express.Router();
 var upload = multer({ dest: conf.temp_path });
@@ -36,24 +36,30 @@ router.post('/productImg',upload.single('product'),function(req,res,next){
     //
     var extname=path.extname(file.originalname);
 
-    var thumbnailPath=path.join(conf.upload_path,file.filename+'_s'+extname);
+    var thumbnailPath=path.join(conf.upload_path, file.filename+'_s'+extname);
+    var viewPath=path.join(conf.upload_path, file.filename+'_md'+extname);
+    gm(file.path).resize(100,100,"!").write(thumbnailPath,function(err){
+        if(err){
+            next(err);
+        }
 
-    gm(file.path).resize(100,100).write(thumbnailPath,function(err){
-        console.log(err);
+        gm(file.path).resize(640,260,"!").write(viewPath,function(err){
+                if(err){
+                    next(err);
+                }
+
+            fs.unlink(file.path);
+            res.result(true,'success',{url:'/upload/'+path.basename(thumbnailPath)})
+        })
+
+
     });
 
-        //.
-        //write(thumbnailPath,  function(err){
-        //    if(err){
-        //        next(err);
-        //
-        //    }
-        //    console.log('success');
-        //
-        //})
+
 
 
 
     });
+
 
 module.exports=router;

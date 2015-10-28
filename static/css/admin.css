@@ -50,3 +50,20 @@
 .product .edui-container{
     width:100% !important;
 }
+.product input[type=file]{
+    opacity: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left:0px;
+    top:0px;
+}
+
+.product .thumbnail i{
+
+    position: absolute;
+    top: -9px;
+    right: -3px;
+
+    font-style: normal;
+}
