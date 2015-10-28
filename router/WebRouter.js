@@ -16,7 +16,7 @@ router.get('/',function(req,res,next){
 });
 
 
-router.use('/admin',auth.adminRequire);
+//router.use('/admin',auth.adminRequire);
 router.get('/admin/login',auth.login);
 router.post('/admin/login',Packager(User),auth.processLogin);
 router.get('/admin/index',function(req,res,next){
@@ -28,6 +28,6 @@ router.use('/admin/category',adminCategory);
 
 router.use('/admin/product',adminProduct);
 
-router.use('/admin/upload',uploadRouter)
+router.use('/admin/upload',uploadRouter);
 
 module.exports=router;

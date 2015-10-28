@@ -4,13 +4,55 @@
 var express=require('express');
 var conf=require('../conf');
 var multer=require('multer');
+var mime=require('mime');
+var fs=require('fs');
+var path=require('path');
+var gm=require('gm').subClass({ imageMagick: true });
 
 var router=express.Router();
-var upload = multer({ dest: conf.upload_path });
+var upload = multer({ dest: conf.temp_path });
 
 
 router.post('/productImg',upload.single('product'),function(req,res,next){
-        console.log( req.file)
+    var file=req.file;
+    if(!file){
+        res.result(false,"file not exists.");
+    }
+
+    if(file.mimetype.indexOf('image')!=0){
+        res.result(false,"unacceptable file type.");
+    }
+
+   // conf.img_resize
+
+    //{ fieldname: 'product',
+    //    originalname: 'Koala.jpg',
+    //    encoding: '7bit',
+    //    mimetype: 'image/jpeg',
+    //    destination: '/upload/',
+    //    filename: '844f87c3a1f8f2f082f75e1ae6013db5',
+    //    path: '\\upload\\844f87c3a1f8f2f082f75e1ae6013db5',
+    //    size: 780831 }
+    //
+    var extname=path.extname(file.originalname);
+
+    var thumbnailPath=path.join(conf.upload_path,file.filename+'_s'+extname);
+
+    gm(file.path).resize(100,100).write(thumbnailPath,function(err){
+        console.log(err);
+    });
+
+        //.
+        //write(thumbnailPath,  function(err){
+        //    if(err){
+        //        next(err);
+        //
+        //    }
+        //    console.log('success');
+        //
+        //})
+
+
 
     });
 
