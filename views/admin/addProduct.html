@@ -37,30 +37,32 @@
             <h3>Add Product </h3>
         </div>
 
-        <form action="add" method="post" class="form-horizontal">
+        <form action="add" method="post" id="form1" class="form-horizontal">
 
 
             <div class="form-group">
                 <label class="control-label col-sm-2"> ProductName:</label>
                 <div class="col-sm-5">
-                    <input type="text" class="form-control" placeholder="product name">
+                    <input type="text" class="form-control productName " name="productName" placeholder="product name">
                 </div>
             </div>
 
             <div class="form-group">
                 <label class="control-label col-sm-2"> ProductCode:</label>
                 <div class="col-sm-5">
-                    <input type="text" class="form-control" placeholder="product code">
+                    <input type="text" class="form-control productCode" name="productCode" placeholder="product code">
                 </div>
             </div>
 
             <div class="form-group">
                 <label class="control-label col-sm-2"> ProductCategory:</label>
                 <div class="col-sm-5">
-                    <div class="dropdown">
-                        <button class="btn btn-default dropdown-toggle category" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                            Category
+                    <div class="dropdown ">
+                        <button class="btn btn-default dropdown-toggle form-control category" type="button"
+                                id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                            <span class="tag">Category</span>
                             <span class="caret"></span>
+
                         </button>
                         <ul class="dropdown-menu category" aria-labelledby="dropdownMenu1">
                             <li class="dropdown-header"> Action </li>
@@ -68,7 +70,10 @@
                             <li><a href="#">Something else here</a></li>
                             <li><a href="#">Separated link</a></li>
                         </ul>
+                        <input type="hidden" name="productCategory"  class="productCategory">
+
                     </div>
+
                 </div>
             </div>
 
@@ -76,20 +81,16 @@
                 <label class="control-label col-sm-2"> ProductPutInDate:</label>
                 <div class="col-sm-5">
                     <div class="col-sm-4 input-group date form_time " data-date="" data-date-format="hh:ii" data-link-field="dtp_input3" data-link-format="hh:ii">
-                        <input size="16" type="text" value=" "   class="form-control form_datetime">
+                        <input size="16" type="text" value=" "  readonly name="productPutInDate"  class="form-control form_datetime  productPutInDate">
                     </div>
                     <label class="control-label col-sm-4"> ProductPutOutDate:</label>
 
                     <div class="col-sm-4 input-group date form_time " data-date="" data-date-format="hh:ii" data-link-field="dtp_input3" data-link-format="hh:ii">
-                        <input size="16" type="text" value=" "   class="form-control form_datetime">
+                        <input size="16" type="text" value=" "  readonly  class="form-control form_datetime productPutOutDate">
                     </div>
 
 
                 </div>
-
-
-
-
             </div>
 
             <ul class="nav nav-tabs">
@@ -107,6 +108,9 @@
                     </a>
 
                 </div>
+                <div class="alert alert-danger hidden" role="alert">
+                    upload only support 5 images.
+                </div>
             </div>
 
 
@@ -117,12 +121,13 @@
                     <div class="col-sm-5">
                         <div class="dropdown">
                             <button class="btn btn-default dropdown-toggle category" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                                Enable
+                                <span class="tag">Enable</span>
                                 <span class="caret"></span>
+                                <input type="radio" class="hidden rdoStats" />
                             </button>
                             <ul class="dropdown-menu category" aria-labelledby="dropdownMenu1">
-                                <li ><a href="#">Enable</a>  </li>
-                                <li><a href="#">Disenable</a>   </li>
+                                <li ><a href="#" status="1">Enable</a>  </li>
+                                <li><a href="#" status="0">Disable</a>   </li>
 
                             </ul>
                         </div>
@@ -133,21 +138,21 @@
                 <div class="form-group">
                     <label class="control-label col-sm-2"> InventoryInitialCount:</label>
                     <div class="col-sm-5">
-                        <input type="text" class="form-control" placeholder="InventoryInitialCount">
+                        <input type="text" class="form-control initialCount" placeholder="InventoryInitialCount">
                     </div>
                 </div>
 
                 <div class="form-group">
                     <label class="control-label col-sm-2"> InventoryCount:</label>
                     <div class="col-sm-5">
-                        <input type="text" class="form-control" placeholder="InventoryCount">
+                        <input type="text" class="form-control inventoryCount" placeholder="InventoryCount">
                     </div>
                 </div>
 
                 <div class="form-group">
                     <label class="control-label col-sm-2"> WarnCount:</label>
                     <div class="col-sm-5">
-                        <input type="text" class="form-control" placeholder="WarnCount">
+                        <input type="text" class="form-control inventoryWarnCount" placeholder="WarnCount">
                     </div>
                 </div>
 
@@ -164,7 +169,7 @@
                 <div class="col-sm-2"></div>
                 <div class="col-sm-5 text-right">
 
-                    <input type="submit" class="btn btn-primary" value="Save">
+                    <input type="submit" class="btn btn-primary btnSave" value="Save">
 
 
                     <input type="submit" class="btn btn-primary" value="Clear">

@@ -50,15 +50,10 @@ router.post('/productImg',upload.single('product'),function(req,res,next){
 
             fs.unlink(file.path);
             res.result(true,'success',{url:'/upload/'+path.basename(thumbnailPath)})
-        })
+        });
 
 
     });
-
-
-
-
-
     });
 
 

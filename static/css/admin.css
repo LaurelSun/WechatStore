@@ -67,3 +67,12 @@
 
     font-style: normal;
 }
+
+.product .form-control[readonly]{
+    background-color: #fff;
+    cursor: not-allowed;
+}
+.product .form_datetime
+{
+    border-radius:5px !important;
+}
