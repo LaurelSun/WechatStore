@@ -76,3 +76,15 @@
 {
     border-radius:5px !important;
 }
+.product_list .label-warning {
+    color:#2f4154;
+    background-color: #fcf8e3;
+}
+.product_list .panel-heading:after{
+    display: block;
+    clear:both;
+    content:''
+}
+.product_list .btn{
+    padding:3px 12px;
+}

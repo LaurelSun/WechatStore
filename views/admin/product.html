@@ -12,15 +12,18 @@
     <script  src="/js/vendor/bootstrap.js"></script>
 
 </head>
-<body>
+<body class="product_list">
     <div class="container">
         <div class="page-header">
             <h3>  Product </h3>
         </div>
 
         <div class="panel panel-default">
-            <span class="label label-warning">Warning</span>
-            <table class="table">
+            <div class="panel-heading">
+                <span class="label label-warning pull-right">Warning</span>
+            </div>
+
+            <table class="table table-condensed ">
                <thead>
                    <td>ProductName</td>
                    <td>ProductCode</td>
@@ -28,7 +31,7 @@
                    <td>ProductPutOutDate</td>
                    <td>State</td>
                </thead>
-                <tr >
+                <tr  >
                     <td>Name</td>
                     <td>Code</td>
                     <td>N/A</td>
@@ -37,26 +40,46 @@
                        <a class="btn btn-primary">delete</a>
                     </td>
                 </tr>
+                <tr class="warning" >
+                    <td>Name</td>
+                    <td>Code</td>
+                    <td>N/A</td>
+                    <td>2015-11-25 10:00</td>
+                    <td>
+                        <a class="btn btn-primary">delete</a>
+                    </td>
+                </tr>
+                <tr  >
+                    <td>Name</td>
+                    <td>Code</td>
+                    <td>N/A</td>
+                    <td>2015-11-25 10:00</td>
+                    <td>
+                        <a class="btn btn-primary">delete</a>
+                    </td>
+                </tr>
             </table>
         </div>
 
-        <ul class="pagination pull_right">
-            <li>
-                <a href="#" aria-label="Previous">
-                    <span aria-hidden="true">&laquo;</span>
-                </a>
-            </li>
-            <li><a href="#">1</a></li>
-            <li><a href="#">2</a></li>
-            <li><a href="#">3</a></li>
-            <li><a href="#">4</a></li>
-            <li><a href="#">5</a></li>
-            <li>
-                <a href="#" aria-label="Next">
-                    <span aria-hidden="true">&raquo;</span>
-                </a>
-            </li>
-        </ul>
+        <div class="pull_right">
+            <ul class="pagination ">
+                <li>
+                    <a href="#" aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                    </a>
+                </li>
+                <li><a href="#">1</a></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">4</a></li>
+                <li><a href="#">5</a></li>
+                <li>
+                    <a href="#" aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
 
     </div>
 </body>
