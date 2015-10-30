@@ -10,6 +10,8 @@ exports.responseResult=function(req,res,next){
         obj.msg=msg;
         obj.data=data;
         res.send(JSON.stringify(obj))
-    }
+    };
+
     next();
-}
+
+};

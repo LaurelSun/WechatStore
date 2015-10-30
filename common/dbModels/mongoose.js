@@ -109,7 +109,7 @@ mongooseHelper.prototype.save=function(obj,callback){
 
 mongooseHelper.prototype.count=function(query,callback){
     this.model.find(query).count().exec(callback);
-}
+};
 
 
 module.exports=mongooseHelper;

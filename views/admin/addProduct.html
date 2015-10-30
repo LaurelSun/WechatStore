@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title></title>
+    <title>add product</title>
     <!--<link rel="stylesheet" href="/css/bootstrap.css"/>-->
 
 
@@ -86,10 +86,8 @@
                     <label class="control-label col-sm-4"> ProductPutOutDate:</label>
 
                     <div class="col-sm-4 input-group date form_time " data-date="" data-date-format="hh:ii" data-link-field="dtp_input3" data-link-format="hh:ii">
-                        <input size="16" type="text" value=" "  readonly  class="form-control form_datetime productPutOutDate">
+                        <input size="16" type="text" value=" "  name="productPutOutDate" readonly  class="form-control form_datetime productPutOutDate">
                     </div>
-
-
                 </div>
             </div>
 
@@ -104,13 +102,13 @@
                     <a href="#" class="thumbnail col-md-1">
                         <img src="/css/img/upload2.png"  >
                         <input type="file" id="product" name="product"  >
-
                     </a>
 
                 </div>
                 <div class="alert alert-danger hidden" role="alert">
                     upload only support 5 images.
                 </div>
+                <input type="hidden" name="imgURL" class="imgURL">
             </div>
 
 
@@ -123,7 +121,7 @@
                             <button class="btn btn-default dropdown-toggle category" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                                 <span class="tag">Enable</span>
                                 <span class="caret"></span>
-                                <input type="radio" class="hidden rdoStats" />
+                                <input type="radio" class="hidden rdoStats" name="rdoStats" />
                             </button>
                             <ul class="dropdown-menu category" aria-labelledby="dropdownMenu1">
                                 <li ><a href="#" status="1">Enable</a>  </li>
@@ -138,21 +136,21 @@
                 <div class="form-group">
                     <label class="control-label col-sm-2"> InventoryInitialCount:</label>
                     <div class="col-sm-5">
-                        <input type="text" class="form-control initialCount" placeholder="InventoryInitialCount">
+                        <input type="text" name="InventoryInitCount" class="form-control initialCount" placeholder="InventoryInitialCount">
                     </div>
                 </div>
 
                 <div class="form-group">
                     <label class="control-label col-sm-2"> InventoryCount:</label>
                     <div class="col-sm-5">
-                        <input type="text" class="form-control inventoryCount" placeholder="InventoryCount">
+                        <input type="text" name="InventoryCount" class="form-control inventoryCount" placeholder="InventoryCount">
                     </div>
                 </div>
 
                 <div class="form-group">
                     <label class="control-label col-sm-2"> WarnCount:</label>
                     <div class="col-sm-5">
-                        <input type="text" class="form-control inventoryWarnCount" placeholder="WarnCount">
+                        <input type="text" name="warnCount" class="form-control inventoryWarnCount" placeholder="WarnCount">
                     </div>
                 </div>
 
@@ -162,7 +160,7 @@
 
             <div class="tab-page hidden">
                 <script type="text/plain" id="myEditor"   ></script>
-
+                <input type="hidden" name="productIntro" class="productIntro"/>
             </div>
 
             <div class="form-group">

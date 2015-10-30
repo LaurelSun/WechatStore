@@ -15,7 +15,6 @@ exports.adminRequire=function(req,res,next){
     var user=req.session.admin;
     if(!user||!user.isAdmin) {
         res.redirect('/admin/login');
-
         return;
     }
     next();

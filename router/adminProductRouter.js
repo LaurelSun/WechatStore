@@ -10,6 +10,8 @@ var router=express.Router();
 
 var productCtr=new ProductCtl();
 
+router.get('/',productCtr.list);
+
 router.get('/addProduct',function(req,res,next){
    res.render('admin/addProduct.html')
 });

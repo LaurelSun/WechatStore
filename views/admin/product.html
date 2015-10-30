@@ -2,9 +2,62 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title></title>
+    <title>product</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/bootstrap-datetimepicker.min.css">
+
+    <link rel="stylesheet" href="/css/admin.css"/>
+
+    <script src="/js/vendor/jquery-2.1.1.min.js"></script>
+    <script  src="/js/vendor/bootstrap.js"></script>
+
 </head>
 <body>
+    <div class="container">
+        <div class="page-header">
+            <h3>  Product </h3>
+        </div>
 
+        <div class="panel panel-default">
+            <span class="label label-warning">Warning</span>
+            <table class="table">
+               <thead>
+                   <td>ProductName</td>
+                   <td>ProductCode</td>
+                   <td>ProductPutInDate</td>
+                   <td>ProductPutOutDate</td>
+                   <td>State</td>
+               </thead>
+                <tr >
+                    <td>Name</td>
+                    <td>Code</td>
+                    <td>N/A</td>
+                    <td>2015-11-25 10:00</td>
+                    <td>
+                       <a class="btn btn-primary">delete</a>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <ul class="pagination pull_right">
+            <li>
+                <a href="#" aria-label="Previous">
+                    <span aria-hidden="true">&laquo;</span>
+                </a>
+            </li>
+            <li><a href="#">1</a></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+            <li><a href="#">4</a></li>
+            <li><a href="#">5</a></li>
+            <li>
+                <a href="#" aria-label="Next">
+                    <span aria-hidden="true">&raquo;</span>
+                </a>
+            </li>
+        </ul>
+
+    </div>
 </body>
 </html>
