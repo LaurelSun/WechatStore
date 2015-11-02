@@ -59,39 +59,21 @@
                    <td>ProductPutOutDate</td>
                    <td>State</td>
                </thead>
-                <tr  >
-                    <td>Name</td>
-                    <td>Code</td>
-                    <td>N/A</td>
-                    <td>2015-11-25 10:00</td>
-                    <td>
-                       <a class="btn btn-success">publish</a>
-                        <a class="btn btn-warning">modify</a>
-                        <a class="btn btn-primary">delete</a>
-                    </td>
-                </tr>
-                <tr class="warning" >
-                    <td>Name</td>
-                    <td>Code</td>
-                    <td>N/A</td>
-                    <td>2015-11-25 10:00</td>
-                    <td>
-                        <a class="btn btn-success">publish</a>
-                        <a class="btn btn-warning">modify</a>
-                        <a class="btn btn-primary">delete</a>
-                    </td>
-                </tr>
-                <tr  >
-                    <td>Name</td>
-                    <td>Code</td>
-                    <td>N/A</td>
-                    <td>2015-11-25 10:00</td>
-                    <td>
-                        <a class="btn btn-success">publish</a>
-                        <a class="btn btn-warning">modify</a>
-                        <a class="btn btn-primary">delete</a>
-                    </td>
-                </tr>
+
+                <%for(var i in arr){%>
+                    <tr>
+                        <td><%=arr[i].productName%></td>
+                        <td><%=arr[i].productCode%></td>
+                        <td><%=arr[i].productPutInDate%></td>
+                        <td><%=arr[i].productPutInDate%></td>
+                        <td>
+                            <a class="btn btn-success">publish</a>
+                            <a class="btn btn-warning">modify</a>
+                            <a class="btn btn-primary">delete</a>
+                        </td>
+                    </tr>
+                <%}%>
+
             </table>
         </div>
 

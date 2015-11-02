@@ -18,8 +18,8 @@ exports.responseResult=function(req,res,next){
 };
 
 exports.renderPager=function(req,res,next){
-    //[     {  "num": 1,   ¡°key¡±: 10    },   {    "num": 1,    ¡°key¡±: 10 }£¬{    "num": 1,   ¡°key¡±: 10   }  ]
-    //ÆğÊ¼Ò³Ãæ Ò³ÃæÊıÁ¿ Êı¾İÌõÊı ±êÊ¶×Ö¶Î Êı¾İÊı×é
+    //[     {  "num": 1,   “key”: 10    },   {    "num": 1,    “key”: 10 },{    "num": 1,   “key”: 10   }  ]
+    //???? ???? ???? ???? ????
     res.renderPager=function(startPage,pageCount,pageSize,fieldName,data){
 
     var pageArr=[];

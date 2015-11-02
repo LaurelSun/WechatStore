@@ -45,7 +45,5 @@ else{
         res.send('server error');
     });
 }
-
-
 //监听端口
 app.listen(conf.port);

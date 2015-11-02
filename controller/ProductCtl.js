@@ -94,15 +94,17 @@ ProductCtl.prototype.list=function(req,res,next){
         }
 
         var productArr=[];
-        for(var i=0;i<conf.page_cnt;i++){
+        for(var i=0;i<conf.page_cnt;i++) {
+            data[i].productPutInDate=moment(data[i].productPutInDate).format('YYYY-MM-DD HH:mm:ss');
+            data[i].productPutOutDate=moment(data[i].productPutOutDate).format('YYYY-MM-DD HH:mm:ss');
+
             productArr.push(data[i]);
         }
-
         var pager=res.renderPager(currentPage,conf.pager_renderCnt,conf.page_cnt,'inputDate',data);
 
-        res.result(true,'',{pager:pager,arr:productArr});
+        res.render('admin/product.html',{pager:pager,arr:productArr});
+        //res.result(true,'',);
     });
- 
 };
 
 module.exports=ProductCtl;

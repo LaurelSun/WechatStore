@@ -7,7 +7,7 @@ var conf={
     debug:true,
     db:"mongodb://127.0.0.1:27017/WechatStore",
     session_secret:"l.sun054",
-    page_cnt:2,
+    page_cnt:10,
     pager_renderCnt:10,
     pager_querySize:200,
     temp_path:'C:\\work\\nodejs\\temppath',
