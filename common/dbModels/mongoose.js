@@ -47,7 +47,7 @@ mongooseHelper.prototype.Query=function(query,opt,callback){
     }
     option.pageSize=opt.pageSize;
     option.sortField=opt.sortField||{_id:1};
-
+    option.filter=opt.filter||{};
     query=query||{};
     var $this=this;
     if(option.pageSize){
@@ -62,7 +62,7 @@ mongooseHelper.prototype.Query=function(query,opt,callback){
             var totalCnt=data;
             var totalPage=Math.ceil(parseFloat(totalCnt/parseInt(conf.page_cnt)));
 
-            $this.model.find(query).sort(option.sortField).limit(option.pageSize).exec(function(err,data){
+            $this.model.find(query,option.filter).sort(option.sortField).limit(option.pageSize).exec(function(err,data){
                 if(err){
                     callback(err,{});
                     return;

@@ -8,6 +8,8 @@ var conf={
     db:"mongodb://127.0.0.1:27017/WechatStore",
     session_secret:"l.sun054",
     page_cnt:2,
+    pager_renderCnt:10,
+    pager_querySize:200,
     temp_path:'C:\\work\\nodejs\\temppath',
     upload_path:'c:\\work\\nodejs\\upload',
     img_resize:[{w:100,h:100},{w:640, h:260}]

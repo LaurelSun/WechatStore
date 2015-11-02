@@ -62,13 +62,13 @@ CategoryCtl.prototype={
 
         CategoryService.findOne(categoryId,function(err,data){
            assert.equal(err,null);
-            console.log(data.enable+'   '+data.id);
+
             CategoryService.model.update({_id:data.id},
                 {'enable':!data.enable},function(err,data){
                     assert.equal(err,null);
                     console.log(data);
                     res.result(true,"success",data);
-            })
+            });
         })
     },
     constructor:CategoryCtl

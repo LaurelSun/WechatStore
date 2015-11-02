@@ -27,6 +27,7 @@ app.use(session({
 }));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(responseTool.responseResult);
+app.use(responseTool.renderPager);
 
 //绑定路由
 app.use('/',router);

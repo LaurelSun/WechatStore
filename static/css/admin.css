@@ -85,6 +85,6 @@
     clear:both;
     content:''
 }
-.product_list .btn{
+.product_list .table .btn {
     padding:3px 12px;
 }

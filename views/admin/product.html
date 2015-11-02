@@ -16,12 +16,40 @@
     <div class="container">
         <div class="page-header">
             <h3>  Product </h3>
+            <button type="button" class="btn btn-default btn-sm">
+                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                <a href="/admin/product/addproduct">Add</a>
+            </button>
+
         </div>
 
+
         <div class="panel panel-default">
+
             <div class="panel-heading">
-                <span class="label label-warning pull-right">Warning</span>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Search for...">
+                              <span class="input-group-btn">
+                                <button class="btn btn-default" type="button">Go!</button>
+                              </span>
+                        </div><!-- /input-group -->
+
+
+                    </div>
+
+                    <div class="col-md-6">
+                        <span class="label label-warning pull-right">InventoryWarning</span>
+                    </div>
+
+
+                </div>
             </div>
+
+
+             </div>
 
             <table class="table table-condensed ">
                <thead>
@@ -37,7 +65,9 @@
                     <td>N/A</td>
                     <td>2015-11-25 10:00</td>
                     <td>
-                       <a class="btn btn-primary">delete</a>
+                       <a class="btn btn-success">publish</a>
+                        <a class="btn btn-warning">modify</a>
+                        <a class="btn btn-primary">delete</a>
                     </td>
                 </tr>
                 <tr class="warning" >
@@ -46,6 +76,8 @@
                     <td>N/A</td>
                     <td>2015-11-25 10:00</td>
                     <td>
+                        <a class="btn btn-success">publish</a>
+                        <a class="btn btn-warning">modify</a>
                         <a class="btn btn-primary">delete</a>
                     </td>
                 </tr>
@@ -55,13 +87,15 @@
                     <td>N/A</td>
                     <td>2015-11-25 10:00</td>
                     <td>
+                        <a class="btn btn-success">publish</a>
+                        <a class="btn btn-warning">modify</a>
                         <a class="btn btn-primary">delete</a>
                     </td>
                 </tr>
             </table>
         </div>
 
-        <div class="pull_right">
+        <div class="pull-right">
             <ul class="pagination ">
                 <li>
                     <a href="#" aria-label="Previous">
