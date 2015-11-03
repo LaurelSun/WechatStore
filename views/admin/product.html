@@ -10,6 +10,17 @@
 
     <script src="/js/vendor/jquery-2.1.1.min.js"></script>
     <script  src="/js/vendor/bootstrap.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            $('#btnSearch').click(function(){
+
+                var key=$('#txtKey').val();
+                if(key.trim().length>0){
+                    location.replace('/admin/product/?key='+key.trim());
+                }
+            });
+        })
+    </script>
 
 </head>
 <body class="product_list">
@@ -31,9 +42,10 @@
                 <div class="row">
                     <div class="col-md-6">
                         <div class="input-group">
-                            <input type="text" class="form-control" placeholder="Search for...">
+                            <input type="text" class="form-control" id="txtKey" placeholder="Search for...">
                               <span class="input-group-btn">
-                                <button class="btn btn-default" type="button">Go!</button>
+                                <button class="btn btn-default" id="btnSearch" type="button">Go!</button>
+
                               </span>
                         </div><!-- /input-group -->
 
@@ -52,22 +64,27 @@
              </div>
 
             <table class="table table-condensed ">
-               <thead>
-                   <td>ProductName</td>
-                   <td>ProductCode</td>
-                   <td>ProductPutInDate</td>
-                   <td>ProductPutOutDate</td>
-                   <td>State</td>
+               <thead  class="text-center">
+                   <th>ProductName</th>
+                   <th>ProductCode</th>
+                   <th>ProductPutInDate</th>
+                   <th>ProductPutOutDate</th>
+                   <th>State</th>
                </thead>
 
                 <%for(var i in arr){%>
                     <tr>
                         <td><%=arr[i].productName%></td>
                         <td><%=arr[i].productCode%></td>
-                        <td><%=arr[i].productPutInDate%></td>
-                        <td><%=arr[i].productPutInDate%></td>
+                        <td><%=arr[i].putIn%></td>
+                        <td><%=arr[i].putOut%></td>
                         <td>
-                            <a class="btn btn-success">publish</a>
+
+                            <%if(arr[i].status){%>
+                            <a class="btn btn-success">published</a>
+                            <%}else{%>
+                            <a class="btn btn-danger">draft</a>
+                            <%}%>
                             <a class="btn btn-warning">modify</a>
                             <a class="btn btn-primary">delete</a>
                         </td>
@@ -76,7 +93,7 @@
 
             </table>
         </div>
-
+        <%if(pager.length>0){%>
         <div class="pull-right">
             <ul class="pagination ">
                 <li>
@@ -84,11 +101,12 @@
                         <span aria-hidden="true">&laquo;</span>
                     </a>
                 </li>
-                <li><a href="#">1</a></li>
-                <li><a href="#">2</a></li>
-                <li><a href="#">3</a></li>
-                <li><a href="#">4</a></li>
-                <li><a href="#">5</a></li>
+
+                <%for(var item in pager){%>
+                <li><a href="/admin/product/?pageValue=<%=pager[item].key%>&cur=<%=pager[item].num%> "><%=pager[item].num%></a></li>
+                <%}%>
+
+
                 <li>
                     <a href="#" aria-label="Next">
                         <span aria-hidden="true">&raquo;</span>
@@ -96,7 +114,7 @@
                 </li>
             </ul>
         </div>
-
+        <%}%>
     </div>
 </body>
 </html>
